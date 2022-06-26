@@ -1,10 +1,9 @@
 const Argonaute = require("../models/argonautes");
 
-
 exports.createArgonaute = (req, res, next) => {
-  const argonauteObject = JSON.parse(req.body.argonaute);
+  delete req.body._id;
   const argonaute = new Argonaute({
-    ...argonauteObject
+    ...req.body,
   });
   argonaute
     .save()
@@ -12,9 +11,8 @@ exports.createArgonaute = (req, res, next) => {
     .catch((error) => res.status(400).json({ error }));
 };
 
-
 exports.getAllArgonautes = (req, res, next) => {
   Argonaute.find()
-    .then((sauce) => res.status(200).json(sauce))
+    .then((argonaute) => res.status(200).json(argonaute))
     .catch((error) => res.status(400).json({ error }));
 };
