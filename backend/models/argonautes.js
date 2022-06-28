@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
-const argonauteSchema = mongoose.Schema({
+const argoSchema = mongoose.Schema({
   name: { type: String, required: true }
 });
 
-module.exports = mongoose.model("Argonaute", argonauteSchema);
+const ArgoModel = mongoose.model("Argo", argoSchema);
+
+module.exports = ArgoModel;

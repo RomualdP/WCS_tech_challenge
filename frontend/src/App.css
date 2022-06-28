@@ -10,19 +10,6 @@ main {
   margin: 0 auto;
 }
 
-header {
-  background: #f4f4f4;
-  text-align: center;
-  padding: 2em;
-}
-
-header img {
-  max-width: 96px;
-}
-
-header h1 {
-  font-size: 2.5em;
-}
 
 
 h1, h2 {
@@ -40,13 +27,5 @@ label {
 }
 
 .member-item {
-  padding: 0.25em 0;
-}
-
-footer {
-  margin-top: 2em;
-  text-align: center;
-  color: #fff;
-  background: #f76c6c;
   padding: 0.25em 0;
 }

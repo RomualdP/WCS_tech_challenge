@@ -1,0 +1,10 @@
+.member-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.member {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
