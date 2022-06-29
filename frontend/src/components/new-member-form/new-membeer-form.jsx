@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./new-member-form.css";
 
 export default function NewMemberForm() {
   const [argoName, setArgoName] = useState("");
