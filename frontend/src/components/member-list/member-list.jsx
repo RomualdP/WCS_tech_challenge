@@ -1,33 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Argonautes from "./member";
 import "./member-list.css";
 
 export default function NewMemberList() {
-  const [argosData, setArgosData] = useState([]);
-
+  const [argoData, setArgoData] = useState([]);
   useEffect(() => {
-    const getArgos = async () => {
-      const url = "http://localhost:8080/api/argonautes";
-
-      try {
-        const resp = await fetch(url);
-        const data = await resp.json();
-
-        setArgosData(data);
-      } catch (err) {
-        console.error(err);
-      }
+    const getArgos = () => {
+      fetch("http://localhost:8080/api/argonautes")
+        .then((response) => response.json())
+        .then((data) => {
+          setArgoData(data);
+          console.log(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
-
     getArgos();
-  }, []);
-  const argonautes = argosData.map((argo) => {
-    return <Argonautes name={argo.name} key={argo._id} />;
-  });
+  }, [setArgoData]);
+
   return (
     <>
       <h2>Membres de l'équipage</h2>
-      <section className="member-list">{argonautes}</section>
+      <section className="member-list">
+        {argoData.map((argo) => (
+          <Argonautes name={argo.name} key={argo._id} />
+        ))}
+      </section>
     </>
   );
 }

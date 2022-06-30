@@ -2,12 +2,24 @@
   margin: 2em 0 4em 0;
   text-align: center;
 }
-
-.new-member-form {
-  margin: 2em 0 4em 0;
-  text-align: center;
+.new-member-form > input {
+  border: 2px solid #f76c6c;
+  padding: 10px 20px 10px 5px;
+  border-radius: 5px 0 0 5px;
 }
-label {
+textarea:focus,
+input:focus {
+  outline: none;
+}
+.new-member-form > button {
+  background-color: #f76c6c;
+  padding: 10px;
+  border: 2px solid #f76c6c;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+}
+
+.new-member-form > label {
   display: block;
   margin-bottom: 0.5em;
 }

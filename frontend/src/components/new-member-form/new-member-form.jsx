@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import "./new-member-form.css";
 
 export default function NewMemberForm() {
-  const [argoName, setArgoName] = useState("");
-
+  const [argoName, setArgoName] = useState();
   const handleSubmit = (e) => {
-    e.preventDefault();
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -14,9 +12,10 @@ export default function NewMemberForm() {
       }),
     };
     fetch("http://localhost:8080/api/argonautes", requestOptions)
-      .then(() => console.log("Nouvel Argo"))
+      .then(() => console.log("Nouvel argonaute"))
       .catch((error) => console.log(error));
   };
+
   return (
     <div>
       <h2>Ajouter un(e) Argonaute</h2>
@@ -27,7 +26,6 @@ export default function NewMemberForm() {
           name="name"
           type="text"
           placeholder="Charalampos"
-          value={argoName}
           onChange={(e) => setArgoName(e.target.value)}
         />
         <button type="submit" onClick={handleSubmit}>
