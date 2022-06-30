@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "./new-member-form.css";
 
-export default function NewMemberForm() {
-  const [argoName, setArgoName] = useState();
+export default function NewMemberForm({
+  argoName,
+  setArgoName,
+  argoData,
+  setArgoData,
+}) {
   const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(argoName);
+    console.log(argoData);
+    setArgoData([
+      ...argoData,
+      {
+        _id: Date.now(),
+        name: argoName,
+      },
+    ]);
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -26,7 +40,9 @@ export default function NewMemberForm() {
           name="name"
           type="text"
           placeholder="Charalampos"
-          onChange={(e) => setArgoName(e.target.value)}
+          onChange={(e) => {
+            setArgoName(e.target.value);
+          }}
         />
         <button type="submit" onClick={handleSubmit}>
           Envoyer

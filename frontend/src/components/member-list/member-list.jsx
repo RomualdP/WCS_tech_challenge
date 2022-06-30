@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Argonautes from "./member";
 import "./member-list.css";
 
-export default function NewMemberList() {
-  const [argoData, setArgoData] = useState([]);
+export default function NewMemberList({ argoData, setArgoData }) {
   useEffect(() => {
     const getArgos = () => {
       fetch("http://localhost:8080/api/argonautes")
