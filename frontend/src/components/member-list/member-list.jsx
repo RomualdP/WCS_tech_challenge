@@ -5,7 +5,7 @@ import "./member-list.css";
 export default function NewMemberList({ argoData, setArgoData }) {
   useEffect(() => {
     const getArgos = () => {
-      fetch("http://localhost:8080/api/argonautes")
+      fetch("https://wcs-tech-challenge.herokuapp.com/api/argonautes")
         .then((response) => response.json())
         .then((data) => {
           setArgoData(data);

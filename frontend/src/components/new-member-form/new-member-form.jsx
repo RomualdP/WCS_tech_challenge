@@ -25,7 +25,10 @@ export default function NewMemberForm({
         name: argoName,
       }),
     };
-    fetch("http://localhost:8080/api/argonautes", requestOptions)
+    fetch(
+      "https://wcs-tech-challenge.herokuapp.com/api/argonautes",
+      requestOptions
+    )
       .then(() => console.log("Nouvel argonaute"))
       .catch((error) => console.log(error));
   };
