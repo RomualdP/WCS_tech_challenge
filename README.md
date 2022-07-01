@@ -2,6 +2,9 @@
 
 Projet technique pour intégration de la Wild Code School
 
+Live démo :
+https://62bdf378b292530207ab61f3--capable-ganache-cb9a04.netlify.app/
+
 Stack Technique :
 React / Express / MongoDB
 
