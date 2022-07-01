@@ -24,11 +24,7 @@ function App() {
         />
 
         {/* <!-- Member list --> */}
-        <NewMemberList
-          argoName={argoName}
-          argoData={argoData}
-          setArgoData={setArgoData}
-        />
+        <NewMemberList argoData={argoData} setArgoData={setArgoData} />
       </main>
       {/* Footer section */}
       <Footer />

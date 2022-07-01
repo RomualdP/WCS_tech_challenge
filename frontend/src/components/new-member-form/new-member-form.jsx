@@ -9,6 +9,7 @@ export default function NewMemberForm({
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (e.target.value === null) return;
     setArgoData([
       ...argoData,
       {
@@ -43,6 +44,7 @@ export default function NewMemberForm({
           name="name"
           type="text"
           placeholder="Charalampos"
+          value=""
           onChange={(e) => {
             setArgoName(e.target.value);
           }}
