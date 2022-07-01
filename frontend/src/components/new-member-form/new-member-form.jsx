@@ -9,8 +9,6 @@ export default function NewMemberForm({
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(argoName);
-    console.log(argoData);
     setArgoData([
       ...argoData,
       {
@@ -18,9 +16,11 @@ export default function NewMemberForm({
         name: argoName,
       },
     ]);
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      mode: "cors",
       body: JSON.stringify({
         name: argoName,
       }),
